@@ -1,0 +1,109 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:var(--background);
+
+    color:var(--text-primary);
+}
+
+/*=================
+     REUSABLE LAYOUT 
+=================*/
+
+.container-custom{
+    width: min(1200px, 96%);
+    margin: 0 auto;
+}
+
+/*=================
+     SECTION SPACING
+=================*/
+
+.section{
+    padding: 100px 0;
+}
+
+/*=================
+     BUTTONS
+=================*/
+
+.btn-primary-custom{
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-primary-custom:hover{
+    background:var(--primary-dark);
+}
+
+/* ===========================
+   Navbar
+=========================== */
+
+.navbar-custom{
+    position:sticky;
+    top:0;
+
+    background:rgba(255,255,255,0.9);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid var(--border);
+
+    z-index:1000;
+}
+
+.navbar-wrapper{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:80px;
+}
+.nav-links{
+    display:flex;
+    gap: 40px;
+    list-style:none;
+    margin:0;
+}
+.nav-links a{
+    text-decoration:none;
+    color:var(--text-primary);
+    font-weight:500;
+    transition:0.3s;
+}
+.nav-links a:hover{
+    color:var(--primary);
+}
+.nav-buttons{
+    display:flex;
+    align-items:center;
+    gap: 20px;
+}
+.login-btn{
+    text-decoration:none;
+    color:var(--text-primary);
+    font-weight:600;
+}
+.login-btn:hover{
+    color:var(--primary);
+}
+
+.logo{
+    font: size 1.6rem;
+    font-weight:800;
+    color:var(--primary);
+    text-decoration:none;
+}
