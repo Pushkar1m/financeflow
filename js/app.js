@@ -1,29 +1,57 @@
 const counters = document.querySelectorAll(".counter");
 
-counters.forEach(counter => {
+function formatNumber(value) {
 
-    const updateCounter = () => {
+    if (value >= 1000000) {
+        return "₹" + (value / 1000000) + "M+";
+    }
 
-        const target = +counter.dataset.target;
+    if (value >= 1000) {
+        return (value / 1000) + "K+";
+    }
 
-        const current = +counter.innerText;
+    return value;
+}
 
-        const increment = target / 200;
+const observer = new IntersectionObserver((entries, observer) => {
 
-        if(current < target){
+    entries.forEach(entry => {
 
-            counter.innerText = Math.ceil(current + increment);
+        if (!entry.isIntersecting) return;
 
-            setTimeout(updateCounter,10);
+        const counter = entry.target;
+        const target = Number(counter.dataset.target);
 
-        }else{
+        const updateCounter = () => {
 
-            counter.innerText = target;
+            const current = Number(counter.innerText.replace(/\D/g, ""));
 
-        }
+            const increment = Math.max(1, Math.ceil(target / 200));
 
-    };
+            if (current < target) {
 
-    updateCounter();
+                counter.innerText = current + increment;
+
+                requestAnimationFrame(updateCounter);
+
+            } else {
+
+                counter.innerText = formatNumber(target);
+
+            }
+
+        };
+
+        updateCounter();
+
+        observer.unobserve(counter);
+
+    });
+
+}, {
+
+    threshold: 0.2
 
 });
+
+counters.forEach(counter => observer.observe(counter));

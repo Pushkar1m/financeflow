@@ -26,8 +26,6 @@
     rel="stylesheet">
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="css/variables.css">
-
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -272,8 +270,11 @@
 
             <!--CARDS 1-->
 
-            <div class="stats-grid">
+            <div class="stat-card">
 
+                <div class="stat-icon" >
+                <i class="fa-solid fa-users" aria-hidden="true"></i>
+               </div>
                 <h3 class="counter" data-target="50000">0</h3>
 
                 <p>Active Users</p>
@@ -284,9 +285,12 @@
 
             <div class="stat-card">
 
-                <h3 class="counter money" data-target="10">0</h3>
+                <div class="stat-icon">
+                <i class="fa-solid fa-money-bill-transfer" aria-hidden="true"></i>
+                </div>
+                <h3 class="counter money" data-target="10000000">0</h3>
 
-                <p>Million Rupees Tracked</p>
+                <p>Transactions Managed</p>
 
             </div>
 
@@ -294,6 +298,9 @@
 
             <div class="stat-card">
 
+                <div class="stat-icon">
+                <i class="fa-solid fa-server" aria-hidden="true"></i>
+                </div>
                 <h3>99.9%</h3>
 
                 <p>Platform Uptime</p>
@@ -303,8 +310,10 @@
             <!--CARDS 4-->
 
             <div class="stat-card">
-
-                <h3>4.9★</h3>
+                <div class="stat-icon">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                </div>
+                <h3>4.9</h3>
 
                 <p>User Rating</p>
 
@@ -312,15 +321,94 @@
         </div>
     </div>
 </section>
+<!-- ==========================
+     Dashboard Preview
+=========================== -->
 
+<section class="dashboard-preview section">
+
+    <div class="container-custom">
+
+        <div class="section-title">
+
+            <h2>Powerful Dashboard</h2>
+
+            <p>
+                Everything you need to monitor your finances in one place.
+            </p>
+        </div>
+        
+        <div class="dashboard-grid">
+
+            <!--LEFT SIDE-->
+
+            <div class="dashboard-left">
+
+                <!--BALANCE CARD-->
+
+                <div class="balance-card">
+
+                    <span>Total Balance</span>
+
+                    <h2>₹54,700</h2>
+
+                    <div class="balance-info">
+
+                        <span class="profit">
+
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+
+                            +12.4%
+
+                        </span>
+
+                        <small>Compared to last month</small>
+                        
+                    </div>
+                
+                </div>
+
+                <!--INCOME/EXPENSE-->
+
+                <div class="small-cards">
+                    <div class="small-card income">
+
+                        <i class="fa-solid fa-wallet"></i>
+
+                        <div>
+
+                            <span>Expenses</span>
+
+                            <h3>₹25,300</h3>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--RIGHT SIDE-->
+
+            <div class="dashboard-right">
+
+                <div class="chart-card">
+
+                    <h3>Monthly Spending</h3>
+
+                    <canvas id="expenseChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
     <!-- Bootstrap JS -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="js/app.js"></script>
+<script src="js/charts.js"></script>
 </body>
 
 </html>

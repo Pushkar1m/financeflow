@@ -1,0 +1,68 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:var(--background);
+
+    color:var(--text-primary);
+}
+
+/*=================
+     REUSABLE LAYOUT 
+=================*/
+
+.container-custom{
+    width: min(1200px, 96%);
+    margin: 0 auto;
+}
+
+/*=================
+     SECTION SPACING
+=================*/
+
+.section{
+    padding: 100px 0;
+}
+
+/*=================
+     BUTTONS
+=================*/
+
+.btn-primary-custom{
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-primary-custom:hover{
+    background:var(--primary-dark);
+    transform: translateY(-2px);
+}
+.btn-secondary{
+
+    padding:12px 28px;
+    border:2px solid var(--border);
+    border-radius:12px;
+    text-decoration:none;
+    color:var(--text-primary);
+    font-weight:600;
+    transition:.3s;
+
+}
+
+.btn-secondary:hover{
+
+    border-color:var(--primary);
+    color:var(--primary);
+
+}

@@ -1,0 +1,180 @@
+/* ==========================
+   Dashboard Preview
+========================== */
+
+.dashboard-preview{
+
+    background:#f8fbff;
+}
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1.2fr;
+
+    gap:40px;
+
+    margin-top:60px;
+
+    align-items:center;
+}
+
+/* LEFT */
+
+.balance-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    margin-bottom:25px;
+
+    transition: .35s;
+}
+
+.balance-card span{
+
+    color:var(--text-secondary);
+
+    font-size:.95rem;
+}
+
+.balance-card h2{
+
+    font-size:3rem;
+
+    margin:15px 0;
+
+    color:var(--primary);
+}
+
+.balance-change{
+
+    color:#16a34a;
+
+    font-weight:600;
+}
+
+/* SMALL CARDS */
+
+.small-cards{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+}
+
+.small-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.07);
+
+    transition:.3s;
+}
+
+.small-card:hover{
+
+    transform:translateY(-6px);
+}
+
+.small-card i{
+
+    font-size:28px;
+
+    color:var(--primary);
+}
+
+.small-card span{
+
+    color:gray;
+
+    font-size:.9rem;
+}
+
+.small-card h3{
+
+    margin-top:5px;
+
+    font-weight:700;
+}
+
+/* RIGHT */
+
+.chart-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition: .35s;
+}
+
+.chart-card h3{
+
+    margin-bottom:25px;
+
+    font-weight:700;
+}
+#expenseChart{
+
+    width:100% !important;
+
+    height:350px !important;
+}
+.balance-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-top:20px;
+}
+
+.profit{
+
+    background:#dcfce7;
+
+    color:#16a34a;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    font-weight:600;
+}
+
+.balance-info small{
+
+    color:gray;
+}
+.balance-card:hover,
+.chart-card:hover{
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 20px 45px rgba(0,0,0,.12);
+}
