@@ -1,0 +1,74 @@
+/* Testimonials */
+
+@media(max-width:992px){
+
+.testimonial-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+/* Pricing */
+
+@media(max-width:992px){
+
+    .pricing-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .featured{
+
+        transform:none;
+
+    }
+
+}
+/* CTA */
+
+@media(max-width:768px){
+
+.cta-box{
+
+padding:60px 30px;
+
+}
+
+.cta-box h2{
+
+font-size:2rem;
+
+}
+
+}
+/* Footer */
+
+@media(max-width:992px){
+
+.footer-grid{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.footer-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.footer-bottom{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+}

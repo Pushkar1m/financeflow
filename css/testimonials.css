@@ -1,0 +1,99 @@
+/* ==========================
+   Testimonials
+========================== */
+
+.testimonials{
+
+    background:#fff;
+}
+
+.testimonial-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+    margin-top:70px;
+}
+
+.testimonial-card{
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:24px;
+
+    border:1px solid var(--border);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.05);
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.testimonial-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 30px 70px rgba(79,70,229,.15);
+}
+
+.stars{
+
+    color:#FFD43B;
+
+    margin-bottom:25px;
+
+    font-size:18px;
+}
+
+.testimonial-card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+}
+
+.user-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+}
+
+.user-info img{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+}
+
+.user-info h4{
+
+    margin:0;
+
+    font-size:18px;
+
+    font-weight:700;
+}
+
+.user-info span{
+
+    color:var(--text-secondary);
+
+    font-size:15px;
+}

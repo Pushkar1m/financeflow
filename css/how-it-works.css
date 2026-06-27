@@ -222,6 +222,8 @@ margin-bottom:18px;
     overflow:hidden;
 
     position:relative;
+
+    cursor:pointer;
 }
 
 .step-card::before{
@@ -350,4 +352,80 @@ box-shadow:
 .step-icon{
 
     animation:floatIcon 3s ease-in-out infinite;
+}
+
+/*==========================
+  Scroll Animation
+==========================*/
+
+.timeline-item{
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    transition:
+
+        opacity .8s ease,
+
+        transform .8s ease;
+}
+
+.timeline-item.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+.timeline-item.show::before{
+
+background:var(--primary);
+
+box-shadow:
+
+0 0 0 8px rgba(79,70,229,.15),
+
+0 0 25px rgba(79,70,229,.45);
+}
+.timeline-item.show .step-icon{
+
+animation:
+
+floatIcon 3s ease-in-out infinite,
+
+pop .7s ease;
+}
+@keyframes pop{
+
+0%{
+
+transform:scale(.5);
+
+opacity:0;
+
+}
+
+100%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+.section-title{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:.8s;
+}
+
+.section-title.show{
+
+opacity:1;
+
+transform:translateY(0);
 }
