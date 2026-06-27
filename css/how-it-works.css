@@ -1,56 +1,271 @@
 /* ==========================
-   How It Works
+   HOW IT WORKS
 ========================== */
 
 .how-it-works{
 
-    background:#ffffff;
+    position: relative;
+
+   background:
+
+    radial-gradient(
+    circle at top left,
+    #eef2ff,
+    white 40%
+),
+
+    radial-gradient(
+    circle at bottom right,
+    #eef6ff,
+    white 45%
+);
+
+    overflow: hidden;
 }
 
-.steps-grid{
+/* Decorative background circles */
+
+.how-it-works::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+
+    height:450px;
+
+    background:rgba(79,70,229,.08);
+
+    border-radius:50%;
+
+    top:-180px;
+
+    left:-150px;
+
+    filter:blur(40px);
+}
+
+.how-it-works::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    background:rgba(99,102,241,.08);
+
+    border-radius:50%;
+
+    bottom:-120px;
+
+    right:-120px;
+
+    filter:blur(40px);
+}
+
+/* Container */
+
+.how-it-works .container-custom{
+
+    position:relative;
+
+    z-index:2;
+}
+
+/* Small Tag */
+
+.section-tag{
+
+    display:inline-block;
+
+    margin-bottom:18px;
+
+    padding:8px 20px;
+
+    border-radius:30px;
+
+    background:rgba(79,70,229,.1);
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    font-size:.85rem;
+
+    letter-spacing:1px;
+}
+.timeline{
+
+    margin-top:80px;
 
     display:grid;
 
     grid-template-columns:repeat(4,1fr);
 
-    gap:30px;
+    gap:35px;
 
-    margin-top:60px;
+    position:relative;
+}
+.timeline-line{
+
+    position:absolute;
+
+    top:70px;
+
+    left:8%;
+
+    width:84%;
+
+    height:5px;
+
+    background:linear-gradient(
+    90deg,
+    #4F46E5,
+    #7C3AED,
+    #4F46E5
+);
+
+background-size:300%;
+
+animation:moveLine 8s linear infinite;
+
+    border-radius:30px;
 }
 
-.step-card{
+@keyframes moveLine{
+
+0%{
+background-position:0%;
+}
+
+100%{
+background-position:300%;
+}
+
+}
+
+.timeline-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:58px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:22px;
+
+    height:22px;
+
+    border-radius:50%;
 
     background:white;
 
-    border-radius:20px;
+    border:5px solid var(--primary);
 
-    padding:35px 25px;
-
-    text-align:center;
-
-    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    z-index:5;
 
     transition:.3s;
 }
+.timeline-item{
 
-.step-card:hover{
+    position:relative;
 
-    transform:translateY(-10px);
+    z-index:2;
 
-    box-shadow:0 20px 40px rgba(0,0,0,.12);
+    text-align:center;
+}
+
+.step-number{
+
+font-size:4rem;
+
+font-weight:900;
+
+background:linear-gradient(
+180deg,
+rgba(79,70,229,.18),
+rgba(79,70,229,.02)
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+margin-bottom:18px;
+}
+.step-card{
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.4);
+
+    border-radius:24px;
+
+    padding:40px 25px;
+
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.step-card::before{
+
+content:"";
+
+position:absolute;
+
+top:-100%;
+
+left:-100%;
+
+width:220%;
+
+height:220%;
+
+background:
+
+linear-gradient(
+
+120deg,
+
+transparent,
+
+rgba(255,255,255,.45),
+
+transparent
+
+);
+
+transform:rotate(25deg);
+
+transition:.8s;
 }
 
 .step-icon{
 
-    width:80px;
+    width:90px;
 
-    height:80px;
+    height:90px;
 
     margin:auto;
 
     border-radius:50%;
-
-    background:rgba(79,70,229,.1);
 
     display:flex;
 
@@ -58,21 +273,27 @@
 
     align-items:center;
 
-    margin-bottom:25px;
-}
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        #6d5efc
+    );
 
-.step-icon i{
+    color:white;
 
     font-size:32px;
 
-    color:var(--primary);
-}
+    margin-bottom:25px;
 
+    transition:.35s;
+}
 .step-card h3{
 
-    margin-bottom:15px;
-
     font-weight:700;
+
+    margin-bottom:18px;
+
+    color:var(--text-primary);
 }
 
 .step-card p{
@@ -80,4 +301,53 @@
     color:var(--text-secondary);
 
     line-height:1.7;
+}
+.step-card:hover{
+
+transform:translateY(-18px) scale(1.03);
+
+box-shadow:
+
+0 35px 80px rgba(79,70,229,.18);
+
+border-color:rgba(79,70,229,.2);
+}
+
+.step-card:hover::before{
+
+left:100%;
+}
+
+.step-card:hover .step-icon{
+
+transform:rotate(-10deg)
+scale(1.12);
+
+box-shadow:
+
+0 15px 35px rgba(79,70,229,.35);
+}
+/* ==========================
+   Floating Icon Animation
+========================== */
+
+@keyframes floatIcon{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+.step-icon{
+
+    animation:floatIcon 3s ease-in-out infinite;
 }
