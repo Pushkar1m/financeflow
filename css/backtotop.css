@@ -1,0 +1,70 @@
+/* ==========================
+   Back To Top
+========================== */
+
+#backToTop{
+
+    position:fixed;
+
+    bottom:35px;
+
+    right:35px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        #7C3AED
+    );
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(20px);
+
+    transition:.35s;
+
+    box-shadow:
+        0 12px 30px rgba(79,70,229,.35);
+
+    z-index:999;
+}
+
+#backToTop.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+#backToTop:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 20px 40px rgba(79,70,229,.45);
+
+}
